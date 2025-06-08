@@ -41,3 +41,7 @@ Este repositório contém o projeto **Arquitetura Spring**, desenvolvido no mód
   - Código limpo, reutilizável e de fácil entendimento.
 
 ---
+
+### Sobre o Desenvolvedor
+
+Este projeto foi desenvolvido por [Gustavo Pereira Brum](https://www.linkedin.com/in/gustavo-pereira-brum-42671b241/), estudante de Engenharia de Software, entusiasta de Java e apaixonado por desenvolvimento backend.
