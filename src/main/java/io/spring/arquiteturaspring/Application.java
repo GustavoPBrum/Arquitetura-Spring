@@ -32,7 +32,7 @@ public class Application {
 		// Podemos acessar todas as propriedades do projeto
 		ConfigurableEnvironment environment = applicationContext.getEnvironment();
 		String applicationName = environment.getProperty("string.application.name");
-		System.out.println("Nome da aplicacao: " + applicationName);
+		//System.out.println("Nome da aplicacao: " + applicationName);
 	}
 
 }
