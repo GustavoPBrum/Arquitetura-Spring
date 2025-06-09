@@ -8,8 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-// CAMPO e METODO
-@Target({ElementType.FIELD, ElementType.METHOD})  // Tipo de propriedade, classe ou metodo que essa annotation vai aparecer
+@Target({ElementType.FIELD, ElementType.METHOD})
 @Qualifier("motorTurbo")
 public @interface Turbo {
 }
