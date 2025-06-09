@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TesteFabricaController {
 
     @Autowired // Diz para o Spring ir no container e dar uma instancia de motor, que ja tem la registrado e quero injeta-lo aqui
-    @Qualifier("motorTurbo")  // Passamos o nome do Bean que queremos que seja injetado (apenas quando ha mais de um Bean do mesmo tipo registrado no container)
+    @Turbo
     private Motor motor;
 
     @PostMapping
