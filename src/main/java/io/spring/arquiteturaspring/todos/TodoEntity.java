@@ -7,14 +7,14 @@ import jakarta.persistence.*;
 public class TodoEntity {
 
     @Id
-    @Column(name = "name")
+    @Column(name = "id")  // Este nome esta apenas para fins didaticos, pois nao precisa (quando o nome da coluna eh o mesmo da var)
     @GeneratedValue(strategy = GenerationType.IDENTITY)   // Campos de autoincremento
     private Integer id;
 
     @Column(name = "descricao")
     private String descricao;
 
-    @Column(name = "status")
+    @Column(name = "concluido")
     private Boolean concluido;  // Caso seja 'boolean' primitivo, pode dar erro se ele for nulo e tentarmos acessa-lo (usamos o wrapper)
 
     public Integer getId() {

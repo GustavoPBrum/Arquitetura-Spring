@@ -9,7 +9,7 @@ public class TodoService {
 
     // Como eh uma classe gerenciada pelo Spring (por ser um service) nao precisamos do Autowired, o proprio Spring vai procurar dentro do container
     // Uma instancia de TodoRepository para injetar neste construtor automaticamente
-    public TodoService(TodoRepository todoRepository){
+    public TodoService(TodoRepository todoRepository){  // Service injeta o Repository [...] para fazer operacoes com BD
         this.repository = todoRepository;
     }
 
