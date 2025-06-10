@@ -14,12 +14,13 @@ public class TesteFabricaController {
 
     @Autowired // Diz para o Spring ir no container e dar uma instancia de motor, que ja tem la registrado e quero injeta-lo aqui
     @Turbo  // Alem de deixar o cogido mais clean, evita de errarmos o nome utilizando Qualifiers
-    // o Bean abaixo possui o nome errado do Bean no container, mas o turbo tira o erro pois esta com o nome correto na Annotation
+
+    // o Bean abaixo possui o nome errado do Bean no container, mas o @turbo tira o erro pois esta com o nome correto na Annotation
     @Qualifier("motoTurbo") // Passamos o nome do Bean que queremos que seja injetado (apenas quando ha mais de um Bean do mesmo tipo registrado no container)
     private Motor motor;
 
     @PostMapping
-    public CarroStatus ligarCarro(@RequestBody Chave chave) {
+    public CarroStatus ligarCarro(@RequestBody Chave chave) {  // RequestBody pois vai receber via JSON a chave para ligar o carro
         var carro = new HondaHRV(motor);
         return carro.darIgnicao(chave);
     }

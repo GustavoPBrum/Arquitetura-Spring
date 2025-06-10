@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
-@Configuration
+@Configuration // Essa classe vai ser scaneada, tambem para dizer que essa classe vai ter alguns Beans
 public class MontadoraConfiguration {
 
     @Bean(name="motorAspirado")  // Bean eh quando criamos um metodo que retorna um objeto construido
