@@ -3,11 +3,21 @@ package io.spring.arquiteturaspring;
 import io.spring.arquiteturaspring.todos.TodoEntity;
 import io.spring.arquiteturaspring.todos.TodoValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
-import javax.swing.text.html.parser.Entity;
+import org.springframework.web.context.WebApplicationContext;
 
 @Component
+//@Scope("singleton") // ou
+@Scope(BeanDefinition.SCOPE_SINGLETON)
+//@Scope(WebApplicationContext.SCOPE_REQUEST)
+//@Scope(WebApplicationContext.SCOPE_REQUEST)
+//@Scope(WebApplicationContext.SCOPE_REQUEST)
+//@Scope("request")  //-> vai existir apenas durante a requisicao, instanciado na hora da requisicao e depois nao existe mais
+//@Scope("session")  //-> objeto que dura durante secao do usuario
+//@Scope("application")  //-> parecido com o 'session', mas se estende a todos os usuarios (e so serve pra aplicacoes web)
+
 public class BeanGerenciado {
 
     @Autowired
@@ -28,3 +38,6 @@ public class BeanGerenciado {
         this.validator = validator;
     }
 }
+
+// singleton -> instancia unica de um objeto que vai atender a toda aplicacao
+
