@@ -4,13 +4,15 @@ import io.spring.arquiteturaspring.todos.TodoEntity;
 import io.spring.arquiteturaspring.todos.TodoValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.WebApplicationContext;
 
+// Lazy serve para ter um controle na nossa aplicacao do que sera instanciado 
+//@Lazy(false)  // padrao ja eh true, vai instanciar os beans somente na hora que for utiliza-los, mas pode dar um erro em RunTime
 @Component
-//@Scope("singleton") // ou
 @Scope(BeanDefinition.SCOPE_SINGLETON)
+//@Scope("singleton") // ou
 //@Scope(WebApplicationContext.SCOPE_REQUEST)
 //@Scope(WebApplicationContext.SCOPE_REQUEST)
 //@Scope(WebApplicationContext.SCOPE_REQUEST)

@@ -20,6 +20,8 @@ public class Application {
 		// Pode ter diferentes profiles para cada exemplo, producao, teste, debug
 		builder.profiles("producao");
 
+		//builder.lazyInitialization(true);  // Com essa config, por padrao, todos os beans sao Lazy
+
 		// Sempre passar esses args, pois podem ser passados dentro de um container docker ou quisermos passar alguns parametros Spring
 		builder.run(args);
 
