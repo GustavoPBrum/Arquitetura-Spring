@@ -11,3 +11,4 @@ app:
     motor-padrao: 130
   config:
     variavel: Valor da Variavel X
+    valor1: 500

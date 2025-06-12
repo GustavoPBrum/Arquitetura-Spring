@@ -4,10 +4,12 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 
 @SpringBootApplication
+@EnableConfigurationProperties  // Pode criar classes para representar as propriedades do nosso arquivo application.yml
 public class Application {
 
 	public static void main(String[] args) {
@@ -39,6 +41,9 @@ public class Application {
 		// Quando formos referenciar o nome de algum Bean, eh o nome da classe comecando com letra Minuscula ou o com o nome e .class
 		ExemploValue value = applicationContext.getBean(ExemploValue.class);  // "exemploValue"
 		value.imprimirVariavel();
+
+		AppProperties properties = applicationContext.getBean(AppProperties.class);
+		System.out.println(properties.getValor1());
 	}
 
 }

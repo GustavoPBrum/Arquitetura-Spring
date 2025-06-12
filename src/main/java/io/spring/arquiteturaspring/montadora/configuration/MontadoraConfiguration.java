@@ -12,7 +12,7 @@ public class MontadoraConfiguration {
 
     @Bean(name="motorAspirado")  // Bean eh quando criamos um metodo que retorna um objeto construido
     // Estamos injetando via CONSTRUTOR a nossa propriedade customizada
-    public Motor motorAspirado(@Value("${app.montadora.motor-padrao") Integer cavalos){  // cavalos definidos no application
+    public Motor motorAspirado(@Value("${app.montadora.motor-padrao}") Integer cavalos){  // cavalos definidos no application
         var motor = new Motor();
         motor.setCavalos(cavalos);
         motor.setCilindros(4);

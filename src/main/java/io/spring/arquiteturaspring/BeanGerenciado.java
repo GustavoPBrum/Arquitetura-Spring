@@ -25,8 +25,12 @@ public class BeanGerenciado {
     @Autowired
     private TodoValidator validator; // Injecao via propriedade
 
+    //@Autowired
+    //private AppProperties properties;  // Comum utilizar isto para fazer dentro de classes de configurations
+
     public BeanGerenciado(TodoValidator validator) {  // Injecao via construtor e recomendado pelo Spring
         this.validator = validator;
+        //String variavel = properties.getVariavel();
     }
 
     public void utilizar() {
