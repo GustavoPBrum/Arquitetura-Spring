@@ -8,10 +8,10 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-// Lazy serve para ter um controle na nossa aplicacao do que sera instanciado 
-//@Lazy(false)  // padrao ja eh true, vai instanciar os beans somente na hora que for utiliza-los, mas pode dar um erro em RunTime
+// Lazy serve para ter um controle na nossa aplicacao do que sera instanciado
+//@Lazy(false)  // padrao do @Lazy eh true, vai instanciar os beans somente na hora que for utiliza-los, mas pode dar um erro em RunTime
 @Component
-@Scope(BeanDefinition.SCOPE_SINGLETON)
+@Scope(BeanDefinition.SCOPE_SINGLETON)  // Instancia unica de um obj que vai atender a toda a aplicacao (padrao Spring)
 //@Scope("singleton") // ou
 //@Scope(WebApplicationContext.SCOPE_REQUEST)
 //@Scope(WebApplicationContext.SCOPE_REQUEST)
@@ -40,6 +40,3 @@ public class BeanGerenciado {
         this.validator = validator;
     }
 }
-
-// singleton -> instancia unica de um objeto que vai atender a toda aplicacao
-
