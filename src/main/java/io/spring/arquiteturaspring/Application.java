@@ -33,8 +33,12 @@ public class Application {
 
 		// Podemos acessar todas as propriedades do projeto
 		ConfigurableEnvironment environment = applicationContext.getEnvironment();
-		String applicationName = environment.getProperty("string.application.name");
-		//System.out.println("Nome da aplicacao: " + applicationName);
+		String applicationName = environment.getProperty("spring.application.name");
+		System.out.println("Nome da aplicacao: " + applicationName);
+
+		// Quando formos referenciar o nome de algum Bean, eh o nome da classe comecando com letra Minuscula ou o com o nome e .class
+		ExemploValue value = applicationContext.getBean(ExemploValue.class);  // "exemploValue"
+		value.imprimirVariavel();
 	}
 
 }

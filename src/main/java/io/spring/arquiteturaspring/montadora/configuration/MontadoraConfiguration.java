@@ -2,6 +2,7 @@ package io.spring.arquiteturaspring.montadora.configuration;
 
 import io.spring.arquiteturaspring.montadora.Motor;
 import io.spring.arquiteturaspring.montadora.TipoMotor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -10,9 +11,10 @@ import org.springframework.context.annotation.Primary;
 public class MontadoraConfiguration {
 
     @Bean(name="motorAspirado")  // Bean eh quando criamos um metodo que retorna um objeto construido
-    public Motor motorAspirado(){
+    // Estamos injetando via CONSTRUTOR a nossa propriedade customizada
+    public Motor motorAspirado(@Value("${app.montadora.motor-padrao") Integer cavalos){  // cavalos definidos no application
         var motor = new Motor();
-        motor.setCavalos(120);
+        motor.setCavalos(cavalos);
         motor.setCilindros(4);
         motor.setModelo("XPTO-0");
         motor.setLitragem(2.0);
